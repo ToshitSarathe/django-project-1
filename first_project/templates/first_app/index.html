@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Django test</title>
+    <link rel="stylesheet" href="{% static "css/my_style.css" %}">
+  </head>
+  <body>
+    <h1>Hi Welcome to Django test</h1>
+    <h2>Here are you access records</h2>
+
+    <div class="djangotwo">
+      {% if access_records %}
+      <table>
+        <thead>
+          <th>Site Name</th>
+          <th>Date accessed</th>
+        </thead>
+
+
+        {% for acc in access_records %}
+          <tr>
+            <td>{{ acc.name }}</td>
+            <td>{{ acc.date }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>No Acess Records Found!!</p>
+      {% endif %}
+
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>First_App</title>
+    <link rel="stylesheet" href="{% static "css/my_style.css" %}">
+  </head>
+  <body><!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title></title>
+    </head>
+    <body>
+
+    </body>
+  </html>
+    <h1>"This is index.html"</h1>
+    <h1>This is a pic of django from the movie Django Unchained!!</h1>
+    <img src="{%static "images/django.jpg" %}" alt="Image not found!!!">
+  </body>
+</html>
+-->
